@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Prueba A-Frame</title>
-    <script src="https://unpkg.com/aframe@1.5.0/dist/aframe.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Snowman - A-Frame</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <a-scene>
-      <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="2 1 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="-2 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+      <!-- Cámara y controles -->
+      <a-entity position="0 1.6 4">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- Suelo -->
+      <a-plane rotation="-90 0 0" width="12" height="12" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
+
+      <!-- Snowman: tres esferas apiladas -->
+      <a-entity id="snowman" position="0 0.25 -3">
+        <!-- Base -->
+        <a-sphere radius="0.9" position="0 0.9 0" color="#ffffff"></a-sphere>
+        <!-- Medio -->
+        <a-sphere radius="0.6" position="0 1.6 0" color="#ffffff"></a-sphere>
+        <!-- Cabeza -->
+        <a-sphere radius="0.4" position="0 2.25 0" color="#ffffff"></a-sphere>
+
+        <!-- Ojos -->
+        <a-sphere radius="0.05" position="-0.08 2.35 0.36" color="#000"></a-sphere>
+        <a-sphere radius="0.05" position="0.08 2.35 0.36" color="#000"></a-sphere>
+
+        <!-- Nariz (cono) -->
+        <a-cone height="0.25" radius-bottom="0.05" position="0 2.25 0.5" rotation="-90 0 0" color="#ff6f00"></a-cone>
+
+        <!-- Botones -->
+        <a-sphere radius="0.06" position="0 1.8 0.62" color="#000"></a-sphere>
+        <a-sphere radius="0.06" position="0 1.55 0.62" color="#000"></a-sphere>
+        <a-sphere radius="0.06" position="0 1.3 0.62" color="#000"></a-sphere>
+
+        <!-- Brazos -->
+        <a-cylinder radius="0.03" height="1" position="-0.9 1.9 0" rotation="0 0 45" color="#8b5a2b"></a-cylinder>
+        <a-cylinder radius="0.03" height="1" position="0.9 1.9 0" rotation="0 0 -45" color="#8b5a2b"></a-cylinder>
+
+        <!-- Sombrero -->
+        <a-cylinder radius="0.25" height="0.02" position="0 2.52 0" color="#000"></a-cylinder>
+        <a-box depth="0.35" height="0.35" width="0.35" position="0 2.7 0" color="#000"></a-box>
+      </a-entity>
+
+      <!-- Texto con instrucciones (opcional) -->
+      <a-entity position="-3 2 -2" rotation="0 30 0">
+        <a-text value="Snowman - A-Frame" color="#000" width="4"></a-text>
+      </a-entity>
     </a-scene>
   </body>
 </html>
-
