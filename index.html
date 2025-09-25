@@ -18,40 +18,42 @@
       <a-sky color="#87CEEB"></a-sky>
 
       <a-entity id="snowman" position="0 0.25 -3">
-        <!-- Cuerpos -->
-        <a-sphere radius="0.9" position="0 0.9 0" color="white"></a-sphere>
-        <a-sphere radius="0.6" position="0 1.7 0" color="white"></a-sphere>
-        <a-sphere radius="0.4" position="0 2.35 0" color="white"></a-sphere>
+        <!-- Cuerpos (centros en z=0) -->
+        <a-sphere id="belly" radius="0.9" position="0 0.9 0" color="white"></a-sphere>
+        <a-sphere id="torso" radius="0.6" position="0 1.7 0" color="white"></a-sphere>
+        <a-sphere id="head" radius="0.4" position="0 2.35 0" color="white"></a-sphere>
 
         <!-- Ojos -->
         <a-sphere radius="0.05" position="-0.1 2.4 0.35" color="black"></a-sphere>
         <a-sphere radius="0.05" position="0.1 2.4 0.35" color="black"></a-sphere>
 
-        <!-- Nariz -->
-        <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.5" rotation="90 0 0" color="orange"></a-cone>
+        <!-- Nariz (ajustada para apuntar hacia delante) -->
+        <!-- La orientación "0 90 0" hace que el cono mire hacia +Z frontal -->
+        <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.45" rotation="0 90 0" color="orange"></a-cone>
 
-        <!-- Botones (alineados en x=0, z=0.75) con separación vertical igual -->
-        <!-- 1) Debajo de la bufanda -->
-        <a-sphere radius="0.05" position="0 1.95 0.75" color="black"></a-sphere>
+        <!-- Bufanda -->
+        <a-torus arc="180" radius="0.45" radius-tubular="0.05" position="0 2.05 0" rotation="90 0 0" color="red"></a-torus>
+        <a-torus arc="120" radius="0.45" radius-tubular="0.05" position="0 2.0 0.1" rotation="110 0 0" color="red"></a-torus>
 
-        <!-- 2) Medio (parte inferior / belly) -->
-        <a-sphere radius="0.05" position="0 1.35 0.75" color="black"></a-sphere>
-
+        <!-- Botones: alineados en x=0, separación vertical igual (0.60) -->
+        <!-- 1) Debajo de la bufanda (sobre la esfera del torso) -->
+        <a-sphere radius="0.05" position="0 1.95 0.62" color="black"></a-sphere>
+        <!-- 2) Medio (parte superior del belly) -->
+        <a-sphere radius="0.05" position="0 1.35 0.92" color="black"></a-sphere>
         <!-- 3) Inferior (parte baja del belly) -->
-        <a-sphere radius="0.05" position="0 0.75 0.75" color="black"></a-sphere>
+        <a-sphere radius="0.05" position="0 0.75 0.92" color="black"></a-sphere>
 
         <!-- Brazos (ramas) -->
         <a-cylinder radius="0.03" height="1.2" position="-0.9 1.7 0" rotation="0 0 30" color="#8B5A2B"></a-cylinder>
         <a-cylinder radius="0.03" height="1.2" position="0.9 1.7 0" rotation="0 0 -30" color="#8B5A2B"></a-cylinder>
 
-        <!-- Sombrero (subido para que no atraviese la cabeza) -->
-        <a-cylinder radius="0.3" height="0.05" position="0 2.85 0" color="black"></a-cylinder> <!-- ala -->
-        <a-cylinder radius="0.21" height="0.1" position="0 2.95 0" color="red"></a-cylinder> <!-- cinta roja -->
-        <a-cylinder radius="0.2" height="0.35" position="0 3.05 0" color="black"></a-cylinder> <!-- copa -->
-
-        <!-- Bufanda -->
-        <a-torus arc="180" radius="0.45" radius-tubular="0.05" position="0 2.05 0" rotation="90 0 0" color="red"></a-torus>
-        <a-torus arc="120" radius="0.45" radius-tubular="0.05" position="0 2.0 0.1" rotation="110 0 0" color="red"></a-torus>
+        <!-- Sombrero (más alto y centrado sobre la cabeza; no intersecta) -->
+        <!-- brim (ala) -->
+        <a-cylinder radius="0.35" height="0.05" position="0 3.05 0" color="black"></a-cylinder>
+        <!-- cinta roja -->
+        <a-cylinder radius="0.22" height="0.08" position="0 3.11 0" color="red"></a-cylinder>
+        <!-- copa -->
+        <a-cylinder radius="0.18" height="0.45" position="0 3.35 0" color="black"></a-cylinder>
       </a-entity>
 
       <a-entity position="-2 3 -2" rotation="0 20 0">
