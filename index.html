@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Snowman Mejorado - A-Frame</title>
+    <title>Snowman Corregido - A-Frame</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.7.0/aframe.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -18,42 +18,44 @@
       <a-sky color="#87CEEB"></a-sky>
 
       <a-entity id="snowman" position="0 0.25 -3">
-        <!-- Cuerpos (centros en z=0) -->
+        <!-- Esferas (cuerpos) -->
         <a-sphere id="belly" radius="0.9" position="0 0.9 0" color="white"></a-sphere>
         <a-sphere id="torso" radius="0.6" position="0 1.7 0" color="white"></a-sphere>
         <a-sphere id="head" radius="0.4" position="0 2.35 0" color="white"></a-sphere>
 
-        <!-- Ojos -->
+        <!-- Ojos (sin cambios) -->
         <a-sphere radius="0.05" position="-0.1 2.4 0.35" color="black"></a-sphere>
         <a-sphere radius="0.05" position="0.1 2.4 0.35" color="black"></a-sphere>
 
-        <!-- Nariz (ajustada para apuntar hacia delante) -->
-        <!-- La orientación "0 90 0" hace que el cono mire hacia +Z frontal -->
-        <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.45" rotation="0 90 0" color="orange"></a-cone>
+        <!-- Nariz: RESTAURADA a la original -->
+        <!-- posición y rotación como en tu primer código -->
+        <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.5" rotation="90 0 0" color="orange"></a-cone>
 
-        <!-- Bufanda -->
+        <!-- Bufanda (sin cambios) -->
         <a-torus arc="180" radius="0.45" radius-tubular="0.05" position="0 2.05 0" rotation="90 0 0" color="red"></a-torus>
         <a-torus arc="120" radius="0.45" radius-tubular="0.05" position="0 2.0 0.1" rotation="110 0 0" color="red"></a-torus>
 
-        <!-- Botones: alineados en x=0, separación vertical igual (0.60) -->
-        <!-- 1) Debajo de la bufanda (sobre la esfera del torso) -->
+        <!-- BOTONES corregidos: -->
+        <!-- 1) Botón debajo de la bufanda (pegado al torso): 
+             torso.radius ≈ 0.6 → z ≈ 0.62 para quedar sobre la superficie frontal -->
         <a-sphere radius="0.05" position="0 1.95 0.62" color="black"></a-sphere>
-        <!-- 2) Medio (parte superior del belly) -->
-        <a-sphere radius="0.05" position="0 1.35 0.92" color="black"></a-sphere>
-        <!-- 3) Inferior (parte baja del belly) -->
-        <a-sphere radius="0.05" position="0 0.75 0.92" color="black"></a-sphere>
+
+        <!-- 2) y 3) Dos botones en la esfera grande (más pegados, misma x) -->
+        <!-- Usé z ≈ 0.92 (near belly radius 0.9) para que queden adheridos -->
+        <a-sphere radius="0.05" position="0 1.25 0.92" color="black"></a-sphere>
+        <a-sphere radius="0.05" position="0 0.65 0.92" color="black"></a-sphere>
 
         <!-- Brazos (ramas) -->
         <a-cylinder radius="0.03" height="1.2" position="-0.9 1.7 0" rotation="0 0 30" color="#8B5A2B"></a-cylinder>
         <a-cylinder radius="0.03" height="1.2" position="0.9 1.7 0" rotation="0 0 -30" color="#8B5A2B"></a-cylinder>
 
-        <!-- Sombrero (más alto y centrado sobre la cabeza; no intersecta) -->
-        <!-- brim (ala) -->
-        <a-cylinder radius="0.35" height="0.05" position="0 3.05 0" color="black"></a-cylinder>
+        <!-- SOMBRERO: dimensiones como antes, PERO bajado para apoyarse en la cabeza -->
+        <!-- brim (ala) - radio y altura como tu primera versión -->
+        <a-cylinder radius="0.3" height="0.05" position="0 2.75 0" color="black"></a-cylinder>
         <!-- cinta roja -->
-        <a-cylinder radius="0.22" height="0.08" position="0 3.11 0" color="red"></a-cylinder>
+        <a-cylinder radius="0.21" height="0.1" position="0 2.85 0" color="red"></a-cylinder>
         <!-- copa -->
-        <a-cylinder radius="0.18" height="0.45" position="0 3.35 0" color="black"></a-cylinder>
+        <a-cylinder radius="0.2" height="0.35" position="0 3.05 0" color="black"></a-cylinder>
       </a-entity>
 
       <a-entity position="-2 3 -2" rotation="0 20 0">
