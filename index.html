@@ -30,16 +30,21 @@
         <!-- Nariz -->
         <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.5" rotation="90 0 0" color="orange"></a-cone>
 
-        <!-- Botones -->
-        <a-sphere radius="0.05" position="0 1.95 0.62" color="black"></a-sphere>
+        <!-- Botones (alineados en x=0, z=0.75) con separación vertical igual -->
+        <!-- 1) Debajo de la bufanda -->
+        <a-sphere radius="0.05" position="0 1.95 0.75" color="black"></a-sphere>
+
+        <!-- 2) Medio (parte inferior / belly) -->
         <a-sphere radius="0.05" position="0 1.35 0.75" color="black"></a-sphere>
-        <a-sphere radius="0.05" position="0 0.95 0.75" color="black"></a-sphere>
+
+        <!-- 3) Inferior (parte baja del belly) -->
+        <a-sphere radius="0.05" position="0 0.75 0.75" color="black"></a-sphere>
 
         <!-- Brazos (ramas) -->
         <a-cylinder radius="0.03" height="1.2" position="-0.9 1.7 0" rotation="0 0 30" color="#8B5A2B"></a-cylinder>
         <a-cylinder radius="0.03" height="1.2" position="0.9 1.7 0" rotation="0 0 -30" color="#8B5A2B"></a-cylinder>
 
-        <!-- Sombrero  -->
+        <!-- Sombrero (subido para que no atraviese la cabeza) -->
         <a-cylinder radius="0.3" height="0.05" position="0 2.85 0" color="black"></a-cylinder> <!-- ala -->
         <a-cylinder radius="0.21" height="0.1" position="0 2.95 0" color="red"></a-cylinder> <!-- cinta roja -->
         <a-cylinder radius="0.2" height="0.35" position="0 3.05 0" color="black"></a-cylinder> <!-- copa -->
