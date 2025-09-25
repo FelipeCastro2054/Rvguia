@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Snowman Corregido - A-Frame</title>
+    <title>Snowman Final - A-Frame</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.7.0/aframe.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -21,34 +21,33 @@
         <a-sphere id="torso" radius="0.6" position="0 1.7 0" color="white"></a-sphere>
         <a-sphere id="head" radius="0.4" position="0 2.35 0" color="white"></a-sphere>
 
-        <!-- Ojos sin cambios -->
+        <!-- Ojos -->
         <a-sphere radius="0.05" position="-0.1 2.4 0.35" color="black"></a-sphere>
         <a-sphere radius="0.05" position="0.1 2.4 0.35" color="black"></a-sphere>
 
-        <!-- Nariz restaurada -->
+        <!-- Nariz (restaurada) -->
         <a-cone height="0.25" radius-bottom="0.06" position="0 2.35 0.5" rotation="90 0 0" color="orange"></a-cone>
 
-        <!-- Bufanda sin cambios -->
+        <!-- Bufanda -->
         <a-torus arc="180" radius="0.45" radius-tubular="0.05" position="0 2.05 0" rotation="90 0 0" color="red"></a-torus>
         <a-torus arc="120" radius="0.45" radius-tubular="0.05" position="0 2.0 0.1" rotation="110 0 0" color="red"></a-torus>
 
-        <!-- BOTONES (posicionados sobre la superficie real de cada esfera) -->
-        <!-- Botón debajo de la bufanda (torso). centro torso y=1.7, r≈0.6 -->
-        <a-sphere radius="0.05" position="0 1.95 0.545" color="black"></a-sphere>
+        <!-- BOTONES -->
+        <!-- botón añadido justo donde marcaste con el recuadro verde -->
+        <a-sphere radius="0.05" position="0 1.60 0.62" color="black"></a-sphere>
 
-        <!-- Botones en la esfera grande (belly): centers y=0.9, r≈0.9 -->
-        <!-- arriba del belly -->
+        <!-- botón en torso/belly superior -->
         <a-sphere radius="0.05" position="0 1.25 0.829" color="black"></a-sphere>
-        <!-- abajo del belly -->
+        <!-- botón belly inferior -->
         <a-sphere radius="0.05" position="0 0.65 0.865" color="black"></a-sphere>
 
         <!-- Brazos -->
         <a-cylinder radius="0.03" height="1.2" position="-0.9 1.7 0" rotation="0 0 30" color="#8B5A2B"></a-cylinder>
         <a-cylinder radius="0.03" height="1.2" position="0.9 1.7 0" rotation="0 0 -30" color="#8B5A2B"></a-cylinder>
 
-        <!-- SOMBRERO: brim y unchanged, listón rojo BAJADO para tocar el brim -->
+        <!-- SOMBRERO (brim, listón tocando el brim, copa) -->
         <a-cylinder radius="0.3" height="0.05" position="0 2.75 0" color="black"></a-cylinder> <!-- brim -->
-        <a-cylinder radius="0.21" height="0.1" position="0 2.825 0" color="red"></a-cylinder> <!-- listón: tocando brim -->
+        <a-cylinder radius="0.21" height="0.1" position="0 2.825 0" color="red"></a-cylinder> <!-- listón tocando brim -->
         <a-cylinder radius="0.2" height="0.35" position="0 3.05 0" color="black"></a-cylinder> <!-- copa -->
       </a-entity>
 
